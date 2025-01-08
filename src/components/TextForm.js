@@ -10,10 +10,12 @@ export default function TextForm(props) {
 
   function handleUpperCase() {
     setText(text.toUpperCase());
+    props.alert("success", "Text converted to Uppercase !")
   }
 
   function handleLowerCase() {
     setText(text.toLowerCase());
+    props.alert("success", "Text converted to Lowercase !")
   }
 
   function handleCapitalizedCase() {
@@ -25,14 +27,17 @@ export default function TextForm(props) {
         )
         .join(" ")
     );
+    props.alert("success", "Text converted to Capitalized Case !")
   }
 
   function handleDefault() {
     setText(initialText);
+    props.alert("success", "Text set to Default !")
   }
 
   function clearText() {
     setText("")
+    props.alert("success", "Text Cleared !")
   }
 
   const [text, setText] = useState("");
